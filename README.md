@@ -81,7 +81,7 @@ import path from 'path';
 export default defineConfig({
   plugins: [
     handlebarsPlugin({
-      partialDirectoryPath: path.resolve(__dirname, 'partials'),
+      partialsDirectoryPath: path.resolve(__dirname, 'partials'),
       transformIndexHtmlOptions: {
         context: () => {
           message: 'Hello, world!'
@@ -137,7 +137,7 @@ export default defineConfig({
 This plugin can be configured with the following options:
 
 * `templateFileExtension` (string) - Specifies the extension of Handlebars template files. Defaults to `hbs` if omitted.
-* `partialDirectoryPath` (string) - Specifies the path to the directory containing partial template files to be included in Handlebars template files. If omitted, partial template files are not registered.
+* `partialsDirectoryPath` (string) - Specifies the path to the directory containing partial template files to be included in Handlebars template files. If omitted, partial template files are not registered.
 * `optimizePartialRegistration` (boolean) - Set to true to optimize the partial registration. This option is effective only when `partialsDirectoryPath` is set. If omitted, the plugin does not optimize the partial registration. If true, the plugin does not register the partials that are already registered.
 * `compileOptions` (object) - Specifies the options to be passed to the Handlebars compiler. If omitted, the default options are used.
 * `transformIndexHtmlOptions` (object) - This is an option to specify when treating the index file as a Handlebars template file during the Vite build process. If this option is not specified, the index file will not be transformed. 
@@ -154,7 +154,7 @@ export default defineConfig({
   plugins: [
     handlebarsPlugin({
       templateFileExtension: 'handlebars',
-      partialDirectoryPath: path.resolve(__dirname, 'templates', 'partials'),
+      partialsDirectoryPath: path.resolve(__dirname, 'templates', 'partials'),
       optimizePartialRegistration: true,
     })
   ]
@@ -180,7 +180,7 @@ export default defineConfig({
   plugins: [
     handlebarsPlugin({
       templateFileExtension: 'handlebars',
-      partialDirectoryPath: path.resolve(__dirname, 'templates', 'partials'),
+      partialsDirectoryPath: path.resolve(__dirname, 'templates', 'partials'),
       transformIndexHtmlOptions: {},
     })
   ]
