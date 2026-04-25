@@ -107,7 +107,7 @@ export default function handlebarsPlugin(
     options.templateFileExtension
   );
   return {
-    name: '@yoichiro/vite-plugin-handlebars',
+    name: '@cpulvermacher/vite-plugin-handlebars',
     transform(code, id) {
       if (!id.endsWith(templateFileExtension)) {
         return null;
