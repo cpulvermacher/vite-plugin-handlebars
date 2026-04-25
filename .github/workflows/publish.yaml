@@ -5,6 +5,7 @@ on:
       - "v*"
 jobs:
   publish:
+    if: false
     name: Node.js ${{ matrix.python-version }} on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     timeout-minutes: 10
