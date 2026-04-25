@@ -228,4 +228,4 @@ If you would like to contribute to this plugin, please follow these steps:
 
 # License
 
-For the license of this plugin, please refer to the [LICENSE](https://github.com/cpulvermacher/vite-plugin-handlebars-import/blob/main/LICENSE) file.
+For the license of this plugin, please refer to the [LICENSE](https://github.com/cpulvermacher/vite-plugin-handlebars/blob/main/LICENSE) file.
