@@ -2,7 +2,7 @@ import path from 'path';
 import Handlebars from 'handlebars';
 import fs from 'fs';
 import { IndexHtmlTransformContext, ViteDevServer } from 'vite';
-import { HandlebarsContext, TransformIndexHtmlOptions } from './index';
+import { HandlebarsContext, TransformIndexHtmlOptions } from './index.js';
 
 let cachePartialMap: { [p: string]: string } | undefined = undefined;
 
