@@ -16,4 +16,5 @@ jobs:
         with:
           node-version: 20.x
       - run: npm ci
+      - run: npm audit --production
       - run: npm run build && npm test -- --run
