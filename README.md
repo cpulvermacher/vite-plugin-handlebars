@@ -1,6 +1,6 @@
 # @cpulvermacher/vite-plugin-handlebars
 
-A maintenance fork of [@yoichiro/vite-plugin-handlebars](https://github.com/yoichiro/vite-plugin-handlebars) with updated dependencies and support for vite 7/8.
+A maintenance fork of @yoichiro/vite-plugin-handlebars with updated dependencies and support for vite 7/8.
 This is a plugin that provides convenient features for using Handlebars with Vite.
 
 ## Features
