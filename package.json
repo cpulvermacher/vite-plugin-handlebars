@@ -1,15 +1,21 @@
 {
-  "name": "@yoichiro/vite-plugin-handlebars",
+  "name": "@cpulvermacher/vite-plugin-handlebars",
   "version": "1.4.0",
   "author": {
     "name": "Yoichiro Tanaka",
     "email": "yoichiro6642@gmail.com",
     "url": "https://github.com/yoichiro"
   },
-  "repository": "github:yoichiro/vite-plugin-handlebars",
-  "homepage": "https://github.com/yoichiro/vite-plugin-handlebars",
+  "contributors": [
+    {
+      "name": "Christian Pulvermacher",
+      "url": "https://github.com/cpulvermacher"
+    }
+  ],
+  "repository": "github:cpulvermacher/vite-plugin-handlebars",
+  "homepage": "https://github.com/cpulvermacher/vite-plugin-handlebars",
   "bugs": {
-    "url": "https://github.com/yoichiro/vite-plugin-handlebars/issues"
+    "url": "https://github.com/cpulvermacher/vite-plugin-handlebars/issues"
   },
   "dependencies": {
     "handlebars": "^4.7.9"
