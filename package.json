@@ -12,7 +12,10 @@
       "url": "https://github.com/cpulvermacher"
     }
   ],
-  "repository": "github:cpulvermacher/vite-plugin-handlebars",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cpulvermacher/vite-plugin-handlebars.git"
+  },
   "homepage": "https://github.com/cpulvermacher/vite-plugin-handlebars",
   "bugs": {
     "url": "https://github.com/cpulvermacher/vite-plugin-handlebars/issues"
