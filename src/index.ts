@@ -106,24 +106,29 @@ export default function handlebarsPlugin(
   const templateFileExtension = decideTemplateFileExtension(
     options.templateFileExtension
   );
+  const templateFileRegExp = new RegExp(
+    `${templateFileExtension.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}$`
+  );
   return {
     name: '@cpulvermacher/vite-plugin-handlebars',
-    transform(code, id) {
-      if (!id.endsWith(templateFileExtension)) {
-        return null;
-      }
-      const transformed = transform(
-        code,
-        id,
-        templateFileExtension,
-        options.partialsDirectoryPath,
-        options.compileOptions,
-        options.optimizePartialRegistration
-      );
-      return {
-        code: transformed,
-        map: null,
-      };
+    transform: {
+      filter: {
+        id: templateFileRegExp,
+      },
+      handler(code, id) {
+        const transformed = transform(
+          code,
+          id,
+          templateFileExtension,
+          options.partialsDirectoryPath,
+          options.compileOptions,
+          options.optimizePartialRegistration
+        );
+        return {
+          code: transformed,
+          map: null,
+        };
+      },
     },
     handleHotUpdate({ file, server }) {
       if (options.partialsDirectoryPath === undefined) {
