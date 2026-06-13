@@ -8,7 +8,7 @@ This is a plugin that provides convenient features for using Handlebars with Vit
 With this plugin, the following features are enabled in projects using Vite:
 
 * Handlebars template files can be imported within `.ts` or `.js` files, which is particularly useful in SPA (Single Page Architecture).
-* During the build process, index files is processed as a Handlebars template file. This feature is especially useful in MPA (Multi Page Architecture).
+* During the build process, index files are processed as Handlebars template files. This feature is especially useful in MPA (Multi Page Architecture).
 
 ### Example of SPA
 
@@ -84,11 +84,11 @@ export default defineConfig({
     handlebarsPlugin({
       partialsDirectoryPath: path.resolve(__dirname, 'partials'),
       transformIndexHtmlOptions: {
-        context: () => {
+        context: () => ({
           message: 'Hello, world!'
-        },
+        }),
         helpers: {
-          'upper-case': (str: string) => str.toUpperCase(),
+          'upper-case': (str) => str.toUpperCase(),
         },
       },
     })
@@ -141,7 +141,7 @@ This plugin can be configured with the following options:
 * `partialsDirectoryPath` (string) - Specifies the path to the directory containing partial template files to be included in Handlebars template files. If omitted, partial template files are not registered.
 * `optimizePartialRegistration` (boolean) - Set to true to optimize the partial registration. This option is effective only when `partialsDirectoryPath` is set. If omitted, the plugin does not optimize the partial registration. If true, the plugin does not register the partials that are already registered.
 * `compileOptions` (object) - Specifies the options to be passed to the Handlebars compiler. If omitted, the default options are used.
-* `transformIndexHtmlOptions` (object) - This is an option to specify when treating the index file as a Handlebars template file during the Vite build process. If this option is not specified, the index file will not be transformed. 
+* `transformIndexHtmlOptions` (object) - This is an option to specify when treating the index file as a Handlebars template file during the Vite build process. If this option is not specified, the index file will not be transformed.
 
 These options can be specified as arguments to the `handlebarsPlugin` function. Below is an example that specifies `handlebars` as the template file extension and `templates/partials` as the directory containing partial template files.
 
@@ -217,7 +217,7 @@ $ npm install
 $ npm run integration-preview
 ```
 
-After the development server starts, please access `http://localhost:5173` in your web browser.
+After the preview server starts, please access `http://localhost:4173` in your web browser.
 
 # Contributing
 
