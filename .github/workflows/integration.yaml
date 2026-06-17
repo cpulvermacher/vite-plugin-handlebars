@@ -31,3 +31,14 @@ jobs:
       - name: Print vite version
         run: npx vite --version
       - run: npm run integration-build
+      - name: Verify build output
+        run: |
+          set -eu
+          for page in index alternative; do
+            out="integration/dist/$page.html"
+            echo "Checking $out"
+            # partial registration + upper-case helper + keyword context
+            grep -qF '<p>This is STATIC partial.</p>' "$out"
+            # no un-rendered handlebars tags left behind
+            ! grep -qF '{{' "$out"
+          done
