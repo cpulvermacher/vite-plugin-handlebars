@@ -1,0 +1,33 @@
+name: Integration Build
+
+permissions:
+  contents: read
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  integration-build:
+    name: Vite ${{ matrix.vite }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        vite:
+          - '6.3.0' # minimum supported
+          - '^7.0.0' # latest 7.x
+          - '^8.0.0' # latest 8.x
+    steps:
+      - uses: actions/checkout@v6
+      - name: Use Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22.x
+      - run: npm ci
+      - name: Install vite ${{ matrix.vite }}
+        run: npm install --no-save "vite@${{ matrix.vite }}"
+      - name: Print vite version
+        run: npx vite --version
+      - run: npm run integration-build
