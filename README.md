@@ -215,8 +215,8 @@ The `integration` directory contains a sample Vite project using this plugin. Yo
 ```sh
 $ git clone https://github.com/cpulvermacher/vite-plugin-handlebars.git
 $ cd vite-plugin-handlebars
-$ npm install
-$ npm run integration-preview
+$ pnpm install
+$ pnpm run integration-preview
 ```
 
 After the preview server starts, please access `http://localhost:4173` in your web browser.

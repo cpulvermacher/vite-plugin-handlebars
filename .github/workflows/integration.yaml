@@ -21,16 +21,18 @@ jobs:
           - '^8.0.0' # latest 8.x
     steps:
       - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v4
       - name: Use Node.js
         uses: actions/setup-node@v6
         with:
           node-version: 22.x
-      - run: npm ci
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
       - name: Install vite ${{ matrix.vite }}
-        run: npm install --no-save "vite@${{ matrix.vite }}"
+        run: pnpm add --save-dev "vite@${{ matrix.vite }}"
       - name: Print vite version
-        run: npx vite --version
-      - run: npm run integration-build
+        run: pnpm exec vite --version
+      - run: pnpm run integration-build
       - name: Verify build output
         run: |
           set -eu
