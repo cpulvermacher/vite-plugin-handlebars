@@ -1,5 +1,8 @@
 # @cpulvermacher/vite-plugin-handlebars
 
+[![npm](https://flat.badgen.net/npm/v/@cpulvermacher/vite-plugin-handlebars)](https://www.npmjs.com/package/@cpulvermacher/vite-plugin-handlebars)
+[![npm downloads](https://flat.badgen.net/npm/dw/@cpulvermacher/vite-plugin-handlebars)](https://www.npmjs.com/package/@cpulvermacher/vite-plugin-handlebars)
+
 A maintenance fork of @yoichiro/vite-plugin-handlebars that makes Vite a peer dependency and keeps things up to date.
 Use `1.4.x` as a drop-in replacement for the original plugin (supports Vite 5-8), or `1.5.x` for slightly faster builds (supports Vite 6.3 and newer).
 
